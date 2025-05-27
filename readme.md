@@ -1,3 +1,6 @@
 This python program allows the user to calculate the exp obtained for the day or set an exp goal using the website MapleRanks for the MMORPG MapleStory.
 
 Simply enter your MapleStory IGN, followed by "gain" to calculate how much EXP you gained for the day, or "goal" to calculate what percent you need to reach to obtain "x" amount of EXP in (T)!
+
+Require:
+pip install requests html2text
