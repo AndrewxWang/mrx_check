@@ -1,0 +1,1 @@
+This python program allows the user to calculate the exp obtained for the day or set an exp goal using the website MapleRanks for the MMORPG MapleStory
