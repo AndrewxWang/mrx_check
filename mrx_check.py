@@ -70,11 +70,14 @@ def main():
     one_tril = 1000000000000
     one_percent = total_exp / one_tril
 
+    print("")
     while True:
         inp = input("")
 
         if inp == "gain":
+            
             curr_exp = float(input("enter current exp: "))
+            print("")
 
             exp_gained = ((curr_exp-perc)*one_percent) / 100;
             rounded_exp_gained = round(exp_gained, 3)
@@ -83,6 +86,8 @@ def main():
             print("exp gained today (in T): " + str(rounded_exp_gained) + "T")
         elif inp == "goal":
             goal = int(input("enter exp goal (T): ")) * one_tril
+            print("")
+            
             goal_perc_inc = 100 - ((total_exp - goal)/total_exp)*100
             goal_perc = round(perc + goal_perc_inc, 3)
 
