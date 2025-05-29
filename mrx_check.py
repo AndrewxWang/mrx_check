@@ -93,7 +93,7 @@ def main():
             print("current percent: " + str(perc) + "%")
             print(str(goal/one_tril) + "T = " + str(round(goal_perc_inc, 3)) + "% net percent")
             print("you need to reach " + str(goal_perc) + "% to do " + str(goal/one_tril) + "T exp!")
-        elif "quit":
+        elif inp == "quit":
             break
         else:
             pass

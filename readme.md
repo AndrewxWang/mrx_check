@@ -5,5 +5,5 @@ Simply enter your MapleStory IGN, followed by "gain" to calculate how much EXP y
 Require:
 1. pip install requests html2text
 
-Current Unimplemnted:
+Current Unimplemented:
 1. If User enters a percent or exp goal that reaches above 100%, calculation is not accurate
