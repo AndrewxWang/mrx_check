@@ -60,6 +60,7 @@ lvl_data = {
 commands = [
     "!gain",
     "!goal",
+    "!update",
     "!help",
     "!quit"
 ]
@@ -108,6 +109,19 @@ def main():
             print("current percent: " + str(perc) + "%")
             print(str(goal/one_tril) + "T = " + str(round(goal_perc_inc, 3)) + "% net percent")
             print("you need to reach " + str(goal_perc) + "% to do " + str(goal/one_tril) + "T exp!")
+
+        elif inp == "!update":
+            level, perc_str = get_mrx((input("enter ign: ")))
+
+            perc = float(perc_str)
+
+            print("current level: " + level)
+            print("current percent(%): " + perc_str + "%")
+
+            total_exp = lvl_data[int(level)]
+
+            one_tril = 1000000000000
+            one_percent = total_exp / one_tril
 
         elif inp == "!help":
             print("command list: ")
