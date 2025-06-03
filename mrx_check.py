@@ -57,6 +57,13 @@ lvl_data = {
     224: 37768768107, 249: 294971656640,  274: 5632233294807,  299: 1737759854037840
 }
 
+commands = {
+    "!gain",
+    "!goal",
+    "!help",
+    "!quit"
+}
+
 def main():
     level, perc_str = get_mrx((input("enter ign: ")))
 
@@ -72,29 +79,42 @@ def main():
 
     while True:
         print("")
-        inp = input("")
+        inp = input("enter command (!help for commands): ")
 
-        if inp == "gain":
-            
-            curr_exp = float(input("enter current exp: "))
+        if inp == "!gain":
+            while True:
+                try:
+                    curr_exp = float(input("enter current exp (enter -1 to quit): "))
 
-            exp_gained = ((curr_exp-perc)*one_percent) / 100;
-            rounded_exp_gained = round(exp_gained, 3)
+                    if curr_exp == -1:
+                        break
 
-            print("\n")
-            print("exp gained today (in T): " + str(rounded_exp_gained) + "T")
-        elif inp == "goal":
+                    exp_gained = ((curr_exp-perc)*one_percent) / 100
+                    rounded_exp_gained = round(exp_gained, 3)
+
+                    print("exp gained today (in T): " + str(rounded_exp_gained) + "T")
+                except ValueError:
+                    pass
+       
+        elif inp == "!goal":
             goal = int(input("enter exp goal (T): ")) * one_tril
             
             goal_perc_inc = 100 - ((total_exp - goal)/total_exp)*100
             goal_perc = round(perc + goal_perc_inc, 3)
 
-            print("\n")
             print("current percent: " + str(perc) + "%")
             print(str(goal/one_tril) + "T = " + str(round(goal_perc_inc, 3)) + "% net percent")
             print("you need to reach " + str(goal_perc) + "% to do " + str(goal/one_tril) + "T exp!")
-        elif inp == "quit":
+
+        elif inp == "!help":
+            print("command list: ")
+
+            for comm in commands:
+                print(comm)
+       
+        elif inp == "!quit":
             break
+       
         else:
             pass
             # continue on until user types quit
