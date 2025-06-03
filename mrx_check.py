@@ -57,12 +57,12 @@ lvl_data = {
     224: 37768768107, 249: 294971656640,  274: 5632233294807,  299: 1737759854037840
 }
 
-commands = {
+commands = [
     "!gain",
     "!goal",
     "!help",
     "!quit"
-}
+]
 
 def main():
     level, perc_str = get_mrx((input("enter ign: ")))
@@ -80,6 +80,7 @@ def main():
     while True:
         print("")
         inp = input("enter command (!help for commands): ")
+        print("")
 
         if inp == "!gain":
             while True:
@@ -92,7 +93,9 @@ def main():
                     exp_gained = ((curr_exp-perc)*one_percent) / 100
                     rounded_exp_gained = round(exp_gained, 3)
 
+                    print("")
                     print("exp gained today (in T): " + str(rounded_exp_gained) + "T")
+                    print("")
                 except ValueError:
                     pass
        
